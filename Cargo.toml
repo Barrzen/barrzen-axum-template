@@ -15,7 +15,7 @@ barrzen-axum-openapi = { path = "../barrzen-axum-kit/crates/barrzen-axum-openapi
 tokio = { version = "1", features = ["full"] }
 anyhow = "1"
 tracing = "0.1"
-axum = "0.7"
+axum = "0.8"
 serde = { version = "1", features = ["derive"] }
 utoipa = { version = "5", features = ["axum_extras"] }
 
