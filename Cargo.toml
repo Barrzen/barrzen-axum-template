@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2024"
 publish = false
 
-description = "{{project_name}} powered by Barrzen Axum Kit"
+description = "{{project-name}} powered by Barrzen Axum Kit"
 
 [dependencies]
 # Kit dependencies

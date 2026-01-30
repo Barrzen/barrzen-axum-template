@@ -1,9 +1,9 @@
 [template]
-# Required by cargo-generate
+cargo_generate_version = ">=0.23"
+ignore = [".github", "scripts", "tests", "target", "Cargo.lock", ".env", "README.md"]
 
 [placeholders]
-project_name = { type = "string", prompt = "Project name", default = "barrzen-app" }
 kit_version = { type = "string", prompt = "Barrzen Axum Kit version", default = "0.1" }
 
 [hooks]
-# No hooks yet; keep template minimal.
+post = ["hooks/post-script.rhai"]

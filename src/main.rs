@@ -58,7 +58,7 @@ async fn main() -> anyhow::Result<()> {
     )
 )]
 async fn root_handler() -> ApiResponse<String> {
-    ApiResponse::ok(format!("Welcome to {}!", "{{project_name}}"), "Success")
+    ApiResponse::ok(format!("Welcome to {}!", "{{project-name}}"), "Success")
 }
 
 #[utoipa::path(
