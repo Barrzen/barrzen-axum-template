@@ -1,15 +1,17 @@
 [package]
-name = "barrzen-axum-template"
+name = "{{crate_name}}"
 version = "0.1.0"
 edition = "2024"
 publish = false
 
+description = "{{project_name}} powered by Barrzen Axum Kit"
+
 [dependencies]
 # Kit dependencies
-barrzen-axum-core = { path = "../barrzen-axum-kit/crates/barrzen-axum-core", features = ["openapi"] }
-barrzen-axum-infra = { path = "../barrzen-axum-kit/crates/barrzen-axum-infra", features = ["db", "cache-moka"] }
-barrzen-axum-obs = { path = "../barrzen-axum-kit/crates/barrzen-axum-obs", features = ["otel"] }
-barrzen-axum-openapi = { path = "../barrzen-axum-kit/crates/barrzen-axum-openapi", features = ["openapi"] }
+barrzen-axum-core = { version = "{{kit_version}}", features = ["openapi"] }
+barrzen-axum-infra = { version = "{{kit_version}}", features = ["db", "cache-moka"] }
+barrzen-axum-obs = { version = "{{kit_version}}", features = ["otel"] }
+barrzen-axum-openapi = { version = "{{kit_version}}", features = ["openapi"] }
 
 # Core deps needed for main
 tokio = { version = "1", features = ["full"] }

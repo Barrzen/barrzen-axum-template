@@ -58,7 +58,7 @@ async fn main() -> anyhow::Result<()> {
     )
 )]
 async fn root_handler() -> ApiResponse<String> {
-    ApiResponse::ok("Welcome to Barrzen Axum Template!".to_string(), "Success")
+    ApiResponse::ok(format!("Welcome to {}!", "{{project_name}}"), "Success")
 }
 
 #[utoipa::path(

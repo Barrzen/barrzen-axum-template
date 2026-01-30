@@ -1,0 +1,9 @@
+[template]
+# Required by cargo-generate
+
+[placeholders]
+project_name = { type = "string", prompt = "Project name", default = "barrzen-app" }
+kit_version = { type = "string", prompt = "Barrzen Axum Kit version", default = "0.1" }
+
+[hooks]
+# No hooks yet; keep template minimal.
