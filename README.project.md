@@ -20,6 +20,7 @@ cargo run
 
 - Edit `.env` for runtime settings
 - Toggle features in `Cargo.toml` as needed
+- Logs default to `LOG_FORMAT=compact` (single‑line, no color). Set `pretty` or `json` if desired.
 
 ## Kit docs
 
