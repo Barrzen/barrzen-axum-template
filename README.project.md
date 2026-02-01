@@ -21,6 +21,10 @@ cargo run
 - Edit `.env` for runtime settings
 - Toggle features in `Cargo.toml` as needed
 - Logs default to `LOG_FORMAT=compact` (single‑line, no color). Set `pretty` or `json` if desired.
+- Default `LOG_BACKEND` is `tracing`.
+- Set `LOG_BACKEND=fast_log` to use the fast_log backend (requires the `fast-log`
+  feature on `barrzen-axum-obs`); `LOG_FORMAT` is ignored in that mode and
+  `FEATURE_OTEL=true` is not supported.
 
 ## Kit docs
 
