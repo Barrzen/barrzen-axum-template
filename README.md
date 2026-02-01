@@ -30,6 +30,11 @@ cp .env.example .env
 cargo run
 ```
 
+## Logging
+
+The template defaults to `LOG_FORMAT=compact` for single‑line logs without color.
+Set `LOG_FORMAT=pretty` or `LOG_FORMAT=json` if you prefer those formats.
+
 ## Kit docs
 
 - https://github.com/Barrzen/barrzen-axum-kit
