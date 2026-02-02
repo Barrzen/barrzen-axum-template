@@ -1,9 +1,17 @@
 [template]
 cargo_generate_version = ">=0.23"
-ignore = [".github", "scripts", "tests", "target", "Cargo.lock", ".env", "README.md"]
+ignore = [".github", "scripts", "tests", "target", "Cargo.lock", ".env", "README.md", "AGENTS.md"]
 
 [placeholders]
 kit_version = { type = "string", prompt = "Barrzen Axum Kit version", default = "0.1.7" }
+feature_openapi = { type = "bool", prompt = "Include OpenAPI docs + Swagger UI?", default = false }
+feature_db = { type = "bool", prompt = "Enable database (SeaORM) support?", default = false }
+feature_cache_moka = { type = "bool", prompt = "Enable in-process cache (Moka)?", default = true }
+feature_cache_redis = { type = "bool", prompt = "Enable Redis/Valkey cache?", default = false }
+feature_meilisearch = { type = "bool", prompt = "Enable Meilisearch client?", default = false }
+feature_nats = { type = "bool", prompt = "Enable NATS client?", default = false }
+feature_otel = { type = "bool", prompt = "Enable OpenTelemetry tracing?", default = false }
+feature_fast_log = { type = "bool", prompt = "Enable fast_log backend?", default = false }
 
 [hooks]
 post = ["hooks/post-script.rhai"]

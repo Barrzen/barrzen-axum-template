@@ -5,6 +5,10 @@ if file::exists("README.project.md") {
   file::rename("README.project.md", "README.md");
 }
 
+if file::exists("AGENTS.project.md") {
+  file::rename("AGENTS.project.md", "AGENTS.md");
+}
+
 if file::exists("hooks") {
   file::delete("hooks");
 }
