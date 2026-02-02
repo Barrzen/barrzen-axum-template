@@ -3,7 +3,7 @@ cargo_generate_version = ">=0.23"
 ignore = [".github", "scripts", "tests", "target", "Cargo.lock", ".env", "README.md", "AGENTS.md"]
 
 [placeholders]
-kit_version = { type = "string", prompt = "Barrzen Axum Kit version", default = "0.1.7" }
+kit_version = { type = "string", prompt = "Barrzen Axum Kit version", default = "0.1.8" }
 feature_openapi = { type = "bool", prompt = "Include OpenAPI docs + Swagger UI?", default = false }
 feature_db = { type = "bool", prompt = "Enable database (SeaORM) support?", default = false }
 feature_cache_moka = { type = "bool", prompt = "Enable in-process cache (Moka)?", default = true }
