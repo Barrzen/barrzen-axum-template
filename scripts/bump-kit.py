@@ -56,7 +56,10 @@ def main() -> int:
     cargo_content = CARGO_TOML.read_text(encoding="utf-8")
     generate_content = CARGO_GENERATE.read_text(encoding="utf-8")
 
-    cargo_new = update_cargo_toml(cargo_content, latest)
+    if "{{kit_version}}" in cargo_content:
+        cargo_new = cargo_content
+    else:
+        cargo_new = update_cargo_toml(cargo_content, latest)
     generate_new = update_cargo_generate(generate_content, latest)
 
     if cargo_new == cargo_content and generate_new == generate_content:

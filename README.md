@@ -30,6 +30,8 @@ cp .env.example .env
 cargo run
 ```
 
+During generation you will be prompted to select kit features (OpenAPI, DB, cache, OTEL, etc.).
+
 ## Logging
 
 The template defaults to `LOG_FORMAT=compact` for single‑line logs without color.
