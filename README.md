@@ -34,6 +34,10 @@ cargo run
 
 The template defaults to `LOG_FORMAT=compact` for single‑line logs without color.
 Set `LOG_FORMAT=pretty` or `LOG_FORMAT=json` if you prefer those formats.
+Default `LOG_BACKEND` is `tracing`.
+Set `LOG_BACKEND=fast_log` to use the fast_log backend (requires the `fast-log`
+feature on `barrzen-axum-obs`); `LOG_FORMAT` is ignored in that mode and
+`FEATURE_OTEL=true` is not supported.
 
 ## Kit docs
 
