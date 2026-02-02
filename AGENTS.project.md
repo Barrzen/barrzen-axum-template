@@ -32,8 +32,8 @@
 8) `barrzen_axum_obs::shutdown()`
 
 ## Config notes
-- `.env.example` documents `FEATURE_*` toggles and runtime settings.
-- The kit currently reads `DATABASE_URL` for DB init; this repo uses `DB_URL` in `.env.example`.
+- `.env` and `.env.example` document `FEATURE_*` toggles and runtime settings.
+- The kit reads `DATABASE_URL` (preferred) or `DB_URL` for DB init; this repo sets `DATABASE_URL`.
 
 ## Useful commands
 - `cp .env.example .env`

@@ -1,6 +1,6 @@
 [template]
 cargo_generate_version = ">=0.23"
-ignore = [".github", "scripts", "tests", "target", "Cargo.lock", ".env", "README.md", "AGENTS.md"]
+ignore = [".github", "scripts", "tests", "target", "Cargo.lock", "README.md", "AGENTS.md"]
 
 [placeholders]
 kit_version = { type = "string", prompt = "Barrzen Axum Kit version", default = "0.1.8" }

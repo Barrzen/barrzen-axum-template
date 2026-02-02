@@ -12,7 +12,6 @@ Rust Axum service scaffolded from the **Barrzen Axum Template**.
 ## Quick start
 
 ```bash
-cp .env.example .env
 cargo run
 ```
 
@@ -20,6 +19,7 @@ cargo run
 
 - Edit `.env` for runtime settings
 - Toggle features in `Cargo.toml` as needed
+- If you compiled with DB support, set `FEATURE_DB=true` and `DATABASE_URL=...` when your database is ready.
 - Logs default to `LOG_FORMAT=compact` (single‑line, no color). Set `pretty` or `json` if desired.
 - Default `LOG_BACKEND` is `tracing`.
 - Set `LOG_BACKEND=fast_log` to use the fast_log backend (requires the `fast-log`
