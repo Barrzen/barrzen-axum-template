@@ -26,7 +26,6 @@ cargo install cargo-generate
 ```bash
 cargo generate --git https://github.com/Barrzen/barrzen-axum-template.git --name my-service
 cd my-service
-cp .env.example .env
 cargo run
 ```
 
@@ -40,6 +39,11 @@ Default `LOG_BACKEND` is `tracing`.
 Set `LOG_BACKEND=fast_log` to use the fast_log backend (requires the `fast-log`
 feature on `barrzen-axum-obs`); `LOG_FORMAT` is ignored in that mode and
 `FEATURE_OTEL=true` is not supported.
+
+## Database
+
+If you generated the project with DB support, enable it at runtime by setting
+`FEATURE_DB=true` and `DATABASE_URL=...` in `.env`.
 
 ## Kit docs
 

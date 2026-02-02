@@ -23,8 +23,8 @@
 8) `barrzen_axum_obs::shutdown()`
 
 ## Config notes
-- `.env.example` documents runtime env vars and `FEATURE_*` toggles.
-- The kit currently reads `DATABASE_URL` for DB init; `.env.example` uses `DB_URL` and other DB_* fields.
+- `.env` and `.env.example` document runtime env vars and `FEATURE_*` toggles.
+- The kit reads `DATABASE_URL` (preferred) or `DB_URL` for DB init; template sets `DATABASE_URL`.
 
 ## Workflow note
 - After each commit and push, switch to a fresh branch based on `origin/main`.

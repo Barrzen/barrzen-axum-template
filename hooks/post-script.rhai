@@ -16,7 +16,7 @@ if file::exists("hooks") {
 print("✅ Project generated: " + name);
 print("\nNext steps:");
 print("  cd " + name);
-print("  cp .env.example .env");
+print("  # review .env if needed");
 print("  cargo run\n");
 print("Docs:");
 print("  https://docs.rs/barrzen-axum-core");
