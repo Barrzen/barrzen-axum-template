@@ -3,10 +3,10 @@ use barrzen_axum_core::{
     ApiResponse, AppBuilder, BuildInfo, Config,
 };
 use barrzen_axum_infra::Infra;
-{{#if feature_openapi}}
+{% if feature_openapi %}
 use barrzen_axum_openapi::mount as mount_openapi;
 use utoipa::OpenApi;
-{{/if}}
+{% endif %}
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
@@ -27,7 +27,7 @@ async fn main() -> anyhow::Result<()> {
         .route("/", get(root_handler))
         .route("/hello", get(hello_handler));
 
-{{#if feature_openapi}}
+{% if feature_openapi %}
     // 6. OpenAPI (optional)
     #[derive(OpenApi)]
     #[openapi(paths(root_handler, hello_handler))]
@@ -39,7 +39,7 @@ async fn main() -> anyhow::Result<()> {
     } else {
         app_routes
     };
-{{/if}}
+{% endif %}
 
     // 7. Run app
     AppBuilder::new(config, build_info)
@@ -54,7 +54,7 @@ async fn main() -> anyhow::Result<()> {
     Ok(())
 }
 
-{{#if feature_openapi}}
+{% if feature_openapi %}
 #[utoipa::path(
     get,
     path = "/",
@@ -62,12 +62,12 @@ async fn main() -> anyhow::Result<()> {
         (status = 200, description = "Welcome message", body = ApiResponse<String>)
     )
 )]
-{{/if}}
+{% endif %}
 async fn root_handler() -> ApiResponse<String> {
     ApiResponse::ok(format!("Welcome to {}!", "{{project-name}}"), "Success")
 }
 
-{{#if feature_openapi}}
+{% if feature_openapi %}
 #[utoipa::path(
     get,
     path = "/hello",
@@ -75,7 +75,7 @@ async fn root_handler() -> ApiResponse<String> {
         (status = 200, description = "Hello message", body = ApiResponse<String>)
     )
 )]
-{{/if}}
+{% endif %}
 async fn hello_handler() -> ApiResponse<String> {
     ApiResponse::ok("Hello World!".to_string(), "Greeting")
 }

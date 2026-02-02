@@ -26,6 +26,9 @@
 - `.env.example` documents runtime env vars and `FEATURE_*` toggles.
 - The kit currently reads `DATABASE_URL` for DB init; `.env.example` uses `DB_URL` and other DB_* fields.
 
+## Workflow note
+- After each commit and push, switch to a fresh branch based on `origin/main`.
+
 ## Useful commands
 - Generate: `cargo generate --git https://github.com/Barrzen/barrzen-axum-template.git --name my-service`
 - Run locally: `cp .env.example .env` then `cargo run`
