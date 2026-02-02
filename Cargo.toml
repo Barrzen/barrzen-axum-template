@@ -9,22 +9,24 @@ description = "{{project-name}} powered by Barrzen Axum Kit"
 [dependencies]
 # Kit dependencies
 barrzen-axum-core = { version = "{{kit_version}}", features = [
-{{#if feature_openapi}}"openapi",{{/if}}
+{% if feature_openapi %}"openapi",{% endif %}
 ] }
 barrzen-axum-infra = { version = "{{kit_version}}", features = [
-{{#if feature_db}}"db",{{/if}}
-{{#if feature_cache_moka}}"cache-moka",{{/if}}
-{{#if feature_cache_redis}}"cache-redis",{{/if}}
-{{#if feature_meilisearch}}"meilisearch",{{/if}}
-{{#if feature_nats}}"nats",{{/if}}
+{% if feature_db %}"db",{% endif %}
+{% if feature_cache_moka %}"cache-moka",{% endif %}
+{% if feature_cache_redis %}"cache-redis",{% endif %}
+{% if feature_meilisearch %}"meilisearch",{% endif %}
+{% if feature_nats %}"nats",{% endif %}
 ] }
 barrzen-axum-obs = { version = "{{kit_version}}", features = [
-{{#if feature_otel}}"otel",{{/if}}
-{{#if feature_fast_log}}"fast-log",{{/if}}
+{% if feature_otel %}"otel",{% endif %}
+{% if log_backend == "fast_log" %}
+{% if feature_otel %}{% else %}"fast-log",{% endif %}
+{% endif %}
 ] }
-{{#if feature_openapi}}
+{% if feature_openapi %}
 barrzen-axum-openapi = { version = "{{kit_version}}", features = ["openapi"] }
-{{/if}}
+{% endif %}
 
 # Core deps needed for main
 tokio = { version = "1", features = ["full"] }
@@ -32,9 +34,9 @@ anyhow = "1"
 tracing = "0.1"
 axum = "0.8"
 serde = { version = "1", features = ["derive"] }
-{{#if feature_openapi}}
+{% if feature_openapi %}
 utoipa = { version = "5", features = ["axum_extras"] }
-{{/if}}
+{% endif %}
 
 [dev-dependencies]
 tower = { version = "0.5", features = ["util"] }

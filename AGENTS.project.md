@@ -10,15 +10,16 @@
 - `Cargo.toml`: kit dependencies and selected cargo features from generation.
 
 ## Selected kit features (compile-time)
-- core openapi: {{#if feature_openapi}}enabled{{else}}disabled{{/if}}
-- infra db: {{#if feature_db}}enabled{{else}}disabled{{/if}}
-- infra cache moka: {{#if feature_cache_moka}}enabled{{else}}disabled{{/if}}
-- infra cache redis: {{#if feature_cache_redis}}enabled{{else}}disabled{{/if}}
-- infra meilisearch: {{#if feature_meilisearch}}enabled{{else}}disabled{{/if}}
-- infra nats: {{#if feature_nats}}enabled{{else}}disabled{{/if}}
-- obs otel: {{#if feature_otel}}enabled{{else}}disabled{{/if}}
-- obs fast-log: {{#if feature_fast_log}}enabled{{else}}disabled{{/if}}
-- openapi crate: {{#if feature_openapi}}enabled{{else}}disabled{{/if}}
+- core openapi: {% if feature_openapi %}enabled{% else %}disabled{% endif %}
+- infra db: {% if feature_db %}enabled{% else %}disabled{% endif %}
+- infra cache moka: {% if feature_cache_moka %}enabled{% else %}disabled{% endif %}
+- infra cache redis: {% if feature_cache_redis %}enabled{% else %}disabled{% endif %}
+- infra meilisearch: {% if feature_meilisearch %}enabled{% else %}disabled{% endif %}
+- infra nats: {% if feature_nats %}enabled{% else %}disabled{% endif %}
+- obs otel: {% if feature_otel %}enabled{% else %}disabled{% endif %}
+- obs fast-log: {% if log_backend == "fast_log" %}{% if feature_otel %}disabled{% else %}enabled{% endif %}{% else %}disabled{% endif %}
+- log backend: {% if feature_otel %}tracing{% else %}{{log_backend}}{% endif %}
+- openapi crate: {% if feature_openapi %}enabled{% else %}disabled{% endif %}
 
 ## Runtime flow (main.rs)
 1) `Config::from_env()`

@@ -11,7 +11,7 @@ feature_cache_redis = { type = "bool", prompt = "Enable Redis/Valkey cache?", de
 feature_meilisearch = { type = "bool", prompt = "Enable Meilisearch client?", default = false }
 feature_nats = { type = "bool", prompt = "Enable NATS client?", default = false }
 feature_otel = { type = "bool", prompt = "Enable OpenTelemetry tracing?", default = false }
-feature_fast_log = { type = "bool", prompt = "Enable fast_log backend?", default = false }
+log_backend = { type = "string", prompt = "Log backend when OTEL is disabled (tracing|fast_log)?", default = "tracing" }
 
 [hooks]
 post = ["hooks/post-script.rhai"]
