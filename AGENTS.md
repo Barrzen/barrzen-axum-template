@@ -27,7 +27,10 @@
 - The kit reads `DATABASE_URL` (preferred) or `DB_URL` for DB init; template sets `DATABASE_URL`.
 
 ## Workflow note
-- After each commit and push, switch to a fresh branch based on `origin/main`.
+- Always create a new branch before starting work. The branch must be created from the latest `origin/main`.
+- Never push to `main`.
+- Do not commit or push until the user explicitly asks.
+- All commits must follow Conventional Commits.
 
 ## Useful commands
 - Generate: `cargo generate --git https://github.com/Barrzen/barrzen-axum-template.git --name my-service`

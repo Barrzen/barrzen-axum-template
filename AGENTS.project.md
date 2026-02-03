@@ -39,3 +39,10 @@
 - `cp .env.example .env`
 - `cargo run`
 - `cargo test`
+
+## Workflow note
+- Always create a new branch before starting work. The branch must be created from the latest `origin/main`.
+- Never push to `main`.
+- Do not commit or push until the user explicitly asks.
+- All commits must follow Conventional Commits.
+
